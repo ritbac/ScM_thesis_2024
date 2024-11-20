@@ -1,0 +1,29 @@
+---
+title: "Entry check"
+author: "Ritesh Bachar"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#setting the working directory
+# setwd("C:/Users/Ritesh/OneDrive - Johns Hopkins/ScM Thesis/output")
+
+# loading necessary libraries
+library(readxl)
+library(arsenal)
+library(here)
+
+# loading the dataset
+
+entry1 <- read_excel(here("Mukt Database_Ritesh_Entry 1_08-NOV-2024.xlsx"))
+entry2 <- read_excel(here("Mukt Database_Ritesh_Entry 2_08-NOV-2024.xlsx"))
+
+comparison <- comparedf(entry1, entry2)
+summary(comparison)
+```
+
